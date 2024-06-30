@@ -24,13 +24,28 @@ while True:
                     ch=int(input("enter the choice :"))
                     if ch==1:
                          room_id = int(input("Enter the room number to book (1-10): "))
-                         if 1 <= room_id <= 10 and rooms[room_id - 1]:
-                            rooms[room_id - 1] = False
-                            bookings.append([a, room_id])
+                         if 1<= room_id <= 10 and rooms[room_id-1]:
+                            rooms[room_id-1] = False
+                            bookings.append([a,room_id])
                             print("Room No. -",room_id,"booked successfully.\n")
                          else:
                             print("Room is not available or already booked by someone.")
-
-        if f == 0:
+                    elif ch==2:
+                          print("Available rooms:")
+                          for i in range(len(rooms)):
+                            if rooms[i]:
+                                print("Room",i+1," is available")
+                          print()
+                    elif ch==3:
+                        room_id = int(input("Enter the room number to cancel the booking (1-10): "))
+                        if 1 <= room_id <= 10:
+                            for i in bookings:
+                                if i[0] == a and i[1] == room_id:
+                                    rooms[room_id - 1] = True
+                                    bookings.remove(i)
+                                    print("Room No. -", room_id, "booking cancelled successfully.\n")
+                    elif ch==4:
+                        print("logged out")
+                        break
+        if f==0:
             print("\nInvalid email or password.\n")
-            break  
