@@ -4,7 +4,6 @@ while True:
     print("THE RECIPE BOOK")
     print("\n1.Add recipe \n2.View recipe \n3.Update recipe \n4.Delete recipe \n5.exit\n ")
     choice = int(input("Enter your choice: "))
-
     if choice == 1:
         while True:
             recipe_id = input("Enter Recipe ID: ")
@@ -13,7 +12,6 @@ while True:
                 if recipe['recipe_id'] == recipe_id:
                     f=1
                     break
-
             if f==1:
                 print("Recipe ID already exists. Please enter a unique ID.\n")
             else:
