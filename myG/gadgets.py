@@ -43,10 +43,22 @@ while True:
         gadget.execute("delete from gadgets where product_id=%s",(product_id,))
         myg.commit()
     elif choice==4:
+        gadget.execute('SELECT * FROM gadgets')
+        data = gadget.fetchall()
+        print('{:<20}{:<30}{:<20}{:<20}'.format('product_id', 'product_name', 'brand_name', 'price'))
+        print('-' * 80)
+        for i in data:
+            print("{:<20}{:<30}{:<20}{:<20}".format(i[0], i[1], i[2], i[3]))
+    elif choice==5:
         product_id=int(input('enter the id to search :'))
-        
-
-
-
+        gadget.execute('SELECT * FROM gadgets WHERE product_id=%s', (product_id,))
+        data = gadget.fetchall()
+        print('{:<20}{:<20}{:<20}{:<20}'.format('product_id', 'product_name', 'brand_name', 'price'))
+        print('-' * 80)
+        if data:
+            for i in data:
+                print("{:<20}{:<30}{:<20}{:<20}".format(i[0], i[1], i[2], i[3]))
+        else:
+            print('id not available')
     elif choice==6:
         break

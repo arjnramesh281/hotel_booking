@@ -49,4 +49,12 @@
 #         if f==0:
 #             print("\nInvalid email or password.\n")
 
+i=0
+def asd(i):
+    if (i<=10):
+        print(i)
+        i+=1
+        asd(i)
 
+
+asd(i)
