@@ -1,0 +1,5 @@
+name: akhil
+phone: 8782783737
+password: 1
+balance: 20000
+account_number: 73179
