@@ -1,0 +1,5 @@
+name: sugu
+phone: 8737937479
+password: 123
+balance: 40000
+account_number: 61589
